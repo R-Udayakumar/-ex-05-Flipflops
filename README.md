@@ -43,15 +43,88 @@ In T flip flop, "T" defines the term "Toggle". In SR Flip Flop, we provide only 
 
 
 ## Program:
-
+### SR-Flipflop
+```
+  module exp5a(s,r,clk,q,qbar);
+  input s,r,clk;
+  output reg q;
+  output qbar;
+  always@(posedge clk)
+  begin
+  q=s|((~r)&q);
+  end
+  assign qbar=~q;
+  endmodule
+```
+### D-Flipflop
+```
+   module exp5b(d,clk,q,qbar);
+   input d,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&d)|(q&d);
+   end
+   assign qbar=~q;
+   endmodule
+```
+### JK-Flipflop
+```
+   module exp5c(j,k,clk,q,qbar);
+   input j,k,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&j)|(q&(~k));
+   end
+   assign qbar=~q;
+   endmodule
+   ```
+### T-Flipflop
+```
+   module exp5d(t,clk,q,qbar);
+   input t,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&t)|(q&(~t));
+   end
+   assign qbar=~q;
+   endmodule
+```
 
 ## RTL Schematic:
+### SR Flipfliop:
+![image](https://github.com/Afsarjumail/Flipflops/assets/118343395/e4c53426-8513-42c4-b96c-abbf82a3069f)
 
+### D Flipflop:
+![image](https://github.com/Afsarjumail/Flipflops/assets/118343395/8110f956-ddde-44a4-a5b6-c802f00f60b8)
+
+### JK Flipflop:
+![image](https://github.com/Afsarjumail/Flipflops/assets/118343395/9bbdcd0d-74bb-4b3f-9076-4fe62915abe4)
+
+### T Flipflop:
+![image](https://github.com/Afsarjumail/Flipflops/assets/118343395/7d373718-101a-48cc-b9d1-3e2fbce708ba)
 
 
 
 ## Timing Diagram:
+### SR Flipfliop
+![image](https://github.com/R-Udayakumar/-ex-05-Flipflops/assets/118708024/c281441e-8049-43f8-a1a0-b34e1678d29a)
 
+### D Flipflop
+![image](https://github.com/R-Udayakumar/-ex-05-Flipflops/assets/118708024/b9b24408-3a20-4eb2-a79f-3661020d9c3e)
+
+
+### JK Flipflop
+![image](https://github.com/R-Udayakumar/-ex-05-Flipflops/assets/118708024/ac447983-4e35-462a-a8f2-bc26bc07a817)
+
+
+### T Flipflop
+![image](https://github.com/R-Udayakumar/-ex-05-Flipflops/assets/118708024/16676ffd-583a-47a6-a18d-2a1444da8c89)
 
 
 ## Result:
